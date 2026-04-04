@@ -2,10 +2,10 @@ from csiread import Nexmon
 import numpy as np
 import pandas as pd
 
-FNAME = "csi.pcap"
+FNAME = "walk_test_1038.pcap"
 OUTNAME = FNAME + ".csv"
 
-csidata = Nexmon(FNAME, chip="43455c0")
+csidata = Nexmon(FNAME, chip="43455c0",bw=80)
 csidata.read()
 
 
