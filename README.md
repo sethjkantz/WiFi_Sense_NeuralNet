@@ -10,3 +10,6 @@ From here, you can execute the bash script found in the raspberry_pi folder in t
 
 ## PCAP to CSV
 Once the desired data has been captured in the various scenarios (walking, static, etc).  They should be copied from your raspberry pi to the pcap_conversion/pcap_files folder.  Once this step is ran you will have all the necessary CSVs needed for training and using the data.
+
+## Processing and detection
+The host system should use the CSI_WIFI_Sensing.ipynb to process and analyze for binary motion vs no motion.  Initially the CSI Dataset for WiFi based human detection from Qamar Zaman https://ieee-dataport.org/documents/csi-dataset-wifi-based-human-detection was used for training.  Download the dataset, place in repo and the logic should work out of the box.  Once that is in place, you are free to try your own captures and expiriment with own datasets.  Captures are left out of this git repo due to their size and restrictions (IEEEDataPort subscription required to download, own pcap files are too large).
