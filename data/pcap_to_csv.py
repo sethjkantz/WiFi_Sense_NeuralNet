@@ -3,17 +3,28 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 
-FNAME = "walk_test_1038.pcap"
-OUTNAME = FNAME + ".csv"
+#FNAME = "walk_test_1038.pcap"
+#OUTNAME = FNAME + ".csv"
 
-PCAP_DIR = Path("pcap_files")
+PCAP_DIR = Path("hf_dataset/raw_pcap")
 
-for pcap_file in PCAP_DIR.glob("*.pcap"):
+print("test")
+print("Exists:", PCAP_DIR.exists())
+print("Absolute:", PCAP_DIR.resolve())
+
+for pcap_file in PCAP_DIR.rglob("*.pcap"):
     FNAME = str(pcap_file)
     OUTNAME = str(pcap_file.with_suffix(".csv"))
     print(f"Processing: {FNAME}...")
 
-    csidata = Nexmon(FNAME, chip="43455c0",bw=80)
+    if "80_" in FNAME:
+        bandwidth = 80
+    else:
+        bandwidth = 40
+
+    print(f"BW: {bandwidth}...")
+
+    csidata = Nexmon(FNAME, chip="43455c0",bw=bandwidth)
     csidata.read()
 
 
