@@ -14,6 +14,10 @@ hf auth login
 
 Once this is setup, you can execute our ./download_data.sh script, it will auto download the files we recorded onto your machine in the desired format.  Note that this can take some time, as the files are very large.
 
+if you have a dataset that you would like to upload you can use the following command (must have access to repo to do this portion).
+
+hf upload skantz-ksu/wifi-csi-sensing . --repo-type=dataset
+
 
 ## Using Your own Data
 
