@@ -22,3 +22,11 @@ This is a helper file to analyze the CSI data recorded.  It generates graphs to 
 
 ### Inference_CSI.ipynb
 This is a helper file to use the models we created over individual cases.  It is mostly use for post test analysis.
+
+## Models
+
+3 models are saved for ease of testing.  As their name suggests, they are used for the 20MHz, 40MHz, and 80MHz bandwidths respectively.
+
+1. Base_ch011_20MHz_3.keras
+2. Base_ch157_40MHz_3.keras
+3. Base_ch157_80MHz_3.keras
