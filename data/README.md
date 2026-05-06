@@ -2,7 +2,9 @@
 
 ## Using our recorded data
 The data we have collected is available from hugging faces (think github for training data).  
-You must first make an account here:
+You must first make an account here, then you can use our files, available here:
+https://huggingface.co/datasets/skantz-ksu/wifi-csi-sensing/tree/main
+
 
 Then, on command line, ensure hf is installed on your machine
 
