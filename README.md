@@ -1,5 +1,5 @@
 # WiFi Sensing Neural Net
-A nexmon based system to capture CSI from a raspberry pi, train, and decode to determine if there is motion or no motion in a given room.
+A nexmon based system to capture CSI from a raspberry pi, train, and decode to determine if there is motion or no motion in a given room.  The create_venv.sh bash can be used to generate a virtual environment and pip install necessary python dependencies, the start_notebook.sh will source this environment and start the jupyter notebook.
 
 ## Raspberry Pi Setup and data collection
 To capture CSI data a raspberry pi 4 must be used, and set up as described in the nexmon repository found here.  https://github.com/seemoo-lab/nexmon_csi?tab=readme-ov-file#getting-started  Note that for most newer kernels, some commands vary slightly, and you should use this discussion post as a reference to get it up and running.  https://github.com/seemoo-lab/nexmon_csi/discussions/395
@@ -12,4 +12,13 @@ From here, you can execute the bash script found in the raspberry_pi folder in t
 Once the desired data has been captured in the various scenarios (walking, static, etc).  They should be copied from your raspberry pi to the pcap_conversion/pcap_files folder.  Once this step is ran you will have all the necessary CSVs needed for training and using the data.
 
 ## Processing and detection
-The host system should use the CSI_WIFI_Sensing.ipynb to process and analyze for binary motion vs no motion.  Initially the CSI Dataset for WiFi based human detection from Qamar Zaman https://ieee-dataport.org/documents/csi-dataset-wifi-based-human-detection was used for training.  Download the dataset, place in repo and the logic should work out of the box.  Once that is in place, you are free to try your own captures and expiriment with own datasets.  Captures are left out of this git repo due to their size and restrictions (IEEEDataPort subscription required to download, own pcap files are too large).
+The host system should use the CSI_WIFI_Sensing.ipynb to process and analyze for binary motion vs no motion.  Follow steps in data folder to download our data and play around with yourself.  
+
+## CSI_WiFi_Sensing.ipynb
+This is the core model of our system and the main file to review.  Open up and you will find that it is documented with instructions for how to use, once hugginf face data is downloaded it should be plug and play / easy to use
+
+## Analyze_CSI.ipynb
+This is a helper file to analyze the CSI data recorded.  It generates graphs to help better understand how the datasets differ test by test and room by room.
+
+## Inference_CSI.ipynb
+This is a helper file to use the models we created over individual cases.  It is mostly use for post test analysis.
