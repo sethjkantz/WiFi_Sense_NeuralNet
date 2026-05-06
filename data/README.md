@@ -24,11 +24,13 @@ hf upload skantz-ksu/wifi-csi-sensing . --repo-type=dataset
 To use your own data, put the captured pcap files into the format described below
 
 data
- -hf_dataset
-  -raw_pcap
-   -[Input folders with your desired pcap files here, named idle or walking, and 40 or 80 for bandwidth]
-  -pcap_csvs
-   -[put converted files here, once converted using our python scripts]
+-hf_dataset
+--raw_pcap
+---[Input folders with your desired pcap files here, named idle or walking, and 40 or 80 for bandwidth]
+--pcap_csvs
+---[put converted files here, once converted using our python scripts, separate by test]
+--sorted_pcap_csvs
+---[duplicate converted files here, separate by 20/40/80 for idle and walking]
 
 We have provided two scripts to help you with the parsing process, pcap_to_csv.py and split_file.py
 
